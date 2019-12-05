@@ -5,4 +5,13 @@ public class ListZone {
     public String getRepoName() {
         return name;
     }
+
+
+
+  /*  private Integer id ;
+    public Integer getId() {
+        return id;
+    }*/
+
+
 }
