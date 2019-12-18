@@ -28,8 +28,10 @@ public class WowZoneViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewActivity.class);
-                intent.putExtra("ZONE_NAME", maList.getName());
                 intent.putExtra("ZONE_ID", maList.getId());
+                intent.putExtra("ZONE_NAME", maList.getName());
+
+
                 context.startActivity(intent);
             }
         });

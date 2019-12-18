@@ -5,7 +5,13 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/ZoneName"
+        android:id="@+id/zone_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textview" />
+
+    <TextView
+        android:id="@+id/zone_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/textview" />
