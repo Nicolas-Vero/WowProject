@@ -2,16 +2,18 @@ package com.example.wowproject;
 
 public class ListZone {
     private String name;
-    public String getRepoName() {
+    public String getName() {
         return name;
     }
 
 
 
-  /*  private Integer id ;
+    private Integer id ;
     public Integer getId() {
         return id;
-    }*/
+    }
+
+
 
 
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://www.warcraftlogs.com/v1/")
                 .addConverterFactory(GsonConverterFactory.create());
 
-
         Retrofit retrofit = builder.build();
         WarcraftService service = retrofit.create(WarcraftService.class);
         Call<List<ListZone>> call = service.UserRepositories();
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<ListZone>> call, Response<List<ListZone>> response) {
                 List<ListZone> list = response.body();
                 RecyclerView myRecyclerView = findViewById(R.id.myRecyclerView);
+
                 myRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                 myRecyclerView.setAdapter( new WowZoneViewAdapter(list,MainActivity.this));
 
@@ -48,4 +49,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
 }

@@ -2,9 +2,11 @@ package com.example.wowproject;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,13 +18,13 @@ import java.util.List;
 
 public class WowZoneViewAdapter extends  RecyclerView.Adapter<WowZoneViewHolder> {
 
-
-
         private List<ListZone> maList;
         private Context mContext;
+
         public WowZoneViewAdapter(List<ListZone> maList, Context context) {
             this.maList = maList;
             this.mContext = context;
+
         }
         @NonNull
         @Override
@@ -41,5 +43,9 @@ public class WowZoneViewAdapter extends  RecyclerView.Adapter<WowZoneViewHolder>
         public int getItemCount() {
             return maList.size();
         }
-    }
+
+
+
+
+}
 
