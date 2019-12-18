@@ -34,12 +34,12 @@ public class NewActivity extends AppCompatActivity {
        // Toast.makeText(NewActivity.this, zoneID, Toast.LENGTH_LONG).show();
 
         Toast.makeText(NewActivity.this, zoneName, Toast.LENGTH_LONG).show();
-        Toast.makeText(NewActivity.this, zoneID, Toast.LENGTH_LONG).show();
+    //    Toast.makeText(NewActivity.this, zoneID, Toast.LENGTH_LONG).show();
 
         TextView name = findViewById(R.id.zone_name);
         name.setText(zoneName);
-        TextView id = findViewById(R.id.zone_id);
-        id.setText(zoneID);
+     //   TextView id = findViewById(R.id.zone_id);
+     //   id.setText(zoneID);
 
     }
 }
