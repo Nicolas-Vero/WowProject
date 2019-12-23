@@ -1,42 +1,52 @@
 package com.example.wowproject;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
+import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.squareup.picasso.Picasso;
 
-public class WowZoneViewHolder extends RecyclerView.ViewHolder {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-    private TextView name;
-    private View zoneView;
+public class WowZoneViewHolder extends RecyclerView.ViewHolder  {
 
-    public WowZoneViewHolder(@NonNull View itemView) {
-        super(itemView);
-        name = itemView.findViewById(R.id.zoneTv);
-        zoneView = itemView.findViewById(R.id.zoneViewParent);
-        //mWebview = itemView.findViewById(R.id.webview);
 
+        private Context mContext;
+        private TextView name;
+        private ImageView imageUrl;
+        private View zoneView;
+
+
+        public WowZoneViewHolder(@NonNull View itemView ) {
+            super(itemView);
+
+            name = itemView.findViewById(R.id.zoneTV);
+            imageUrl=itemView.findViewById(R.id.imageView);
+            zoneView=itemView.findViewById(R.id.zoneViewParent);
+        }
+
+        void display(final ListZone maList, final Context context){
+            mContext=context;
+            name.setText(maList.getName());
+            Picasso.with(context).load("https://dmszsuqyoe6y6.cloudfront.net/img/warcraft/zones/zone-"+maList.getId()+"-small.jpg").into(imageUrl);
+
+           zoneView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, EncounterActivity.class);
+                    intent.putExtra("ZONE_NAME", maList.getName());
+                    List<ListEncounters> encounters=maList.getEncounters();
+                    intent.putExtra("encounters",(Serializable) encounters );
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
-
-    void display(final ListZone maList, final Context context) {
-        name.setText(maList.getName());
-
-        zoneView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, NewActivity.class);
-                intent.putExtra("ZONE_ID", maList.getId());
-                intent.putExtra("ZONE_NAME", maList.getName());
-
-
-                context.startActivity(intent);
-            }
-        });
-    }
-
-}
 
 

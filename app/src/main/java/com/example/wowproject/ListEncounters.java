@@ -1,14 +1,13 @@
 package com.example.wowproject;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
-public class ListZone {
+public class ListEncounters implements  Serializable{
 
     private String name;
     private Integer id ;
     private String imageUrl;
-    private ArrayList<ListEncounters> encounters;
 
 
     public String getName() {
@@ -19,9 +18,6 @@ public class ListZone {
     }
     public String getImageUrl(){
         return imageUrl;
-    }
 
-    public ArrayList<ListEncounters> getEncounters() {
-        return encounters;
     }
 }

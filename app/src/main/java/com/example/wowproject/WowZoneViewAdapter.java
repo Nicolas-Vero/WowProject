@@ -2,29 +2,26 @@ package com.example.wowproject;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
+import android.content.Intent;
+import android.widget.AdapterView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import retrofit2.Callback;
-import java.util.List;
-
 public class WowZoneViewAdapter extends  RecyclerView.Adapter<WowZoneViewHolder> {
+
+
 
         private List<ListZone> maList;
         private Context mContext;
-
-        public WowZoneViewAdapter(List<ListZone> maList, Context context) {
+        public WowZoneViewAdapter(List<ListZone> maList, Context context){
             this.maList = maList;
-            this.mContext = context;
-
+            this.mContext=context;
         }
         @NonNull
         @Override
@@ -32,20 +29,13 @@ public class WowZoneViewAdapter extends  RecyclerView.Adapter<WowZoneViewHolder>
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.zone,parent, false);
             return new WowZoneViewHolder(view);
         }
-
         @Override
         public void onBindViewHolder(@NonNull WowZoneViewHolder holder, int position) {
-            holder.display(maList.get(position),mContext);
-
+            holder.display(maList.get(position), mContext);
         }
-
         @Override
         public int getItemCount() {
             return maList.size();
         }
-
-
-
-
-}
+    }
 
