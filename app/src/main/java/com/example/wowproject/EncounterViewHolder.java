@@ -34,7 +34,7 @@ public class EncounterViewHolder extends RecyclerView.ViewHolder  {
     void display(final ListEncounters maList, final Context context){
         mContext=context;
         name.setText(maList.getName());
-        Picasso.with(context).load("https://dmszsuqyoe6y6.cloudfront.net/img/warcraft/bosses/"+ maList.getId() + "-icon.jpg").into(imageUrl);
+        Picasso.get().load("https://dmszsuqyoe6y6.cloudfront.net/img/warcraft/bosses/"+ maList.getId() + "-icon.jpg").into(imageUrl);
 
     }
 }
