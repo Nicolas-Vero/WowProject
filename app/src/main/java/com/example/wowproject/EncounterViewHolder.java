@@ -36,6 +36,16 @@ public class EncounterViewHolder extends RecyclerView.ViewHolder  {
         name.setText(maList.getName());
         Picasso.get().load("https://dmszsuqyoe6y6.cloudfront.net/img/warcraft/bosses/"+ maList.getId() + "-icon.jpg").into(imageUrl);
 
+        encounterView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RankingActivity.class);
+                intent.putExtra("ZONE_NAME", maList.getName());
+                intent.putExtra("ZONE_ID", maList.getId());
+                context.startActivity(intent);
+            }
+        });
+
     }
 }
 

@@ -15,13 +15,12 @@
         android:gravity="clip_vertical|center_vertical"
         android:orientation="horizontal"
         android:layout_marginBottom="2dp">
+
         <ImageView
             android:id="@+id/ImageEncounter"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="start">
-
-
         </ImageView>
 
         <TextView
@@ -30,14 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/encounter_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_vertical"
-            android:layout_weight="1"/>
-
     </LinearLayout>
 
 
